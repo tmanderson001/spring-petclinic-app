@@ -1,0 +1,17 @@
+name: Deploy to Stage
+
+on:
+  push:
+    branches:
+      - stage
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger Deployment
+        run: |
+          echo "Stage deployment triggered"
+          echo "This will call shared workflows actions repo "
